@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var schoolViewModels = [SchoolViewModel]()
+    var scores = [SATScore]()
     let cellID = "cellID"
 
     override func viewDidLoad() {
@@ -20,16 +21,39 @@ class ViewController: UIViewController {
     
     fileprivate func getData() {
         
-        // TODO: Add call for scores in a DispatchGroup
+        //TODO: Add call for scores in a DispatchGroup
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         NetworkService.shared.getSchools { [weak self] (schools, err) in
+
+            if let err = err {
+                print("Failed to get schools:", err)
+                return
+            }
+
+            self?.schoolViewModels = schools?.map({return SchoolViewModel(school: $0)}) ?? []
+            print("schoolViewModels: ", self?.schoolViewModels ?? [])
+            dispatchGroup.leave()
+            print("finished 1")
+        }
+        
+        dispatchGroup.enter()
+        NetworkService.shared.getSATScores { [weak self] (scores, err) in
             
             if let err = err {
-                print("Failed to fetch schools:", err)
+                print("failed to get scores", err)
                 return
             }
             
-            self?.schoolViewModels = schools?.map({return SchoolViewModel(school: $0)}) ?? []
-            
+            self?.scores = scores ?? []
+            dispatchGroup.leave()
+            print("scores: ", self?.scores ?? [])
+            print("finished 2")
+        }
+        
+        dispatchGroup.notify(queue: DispatchQueue.global()) {
+            print("Both queries have completed")
+            //reload table
         }
     }
 

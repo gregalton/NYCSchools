@@ -16,6 +16,7 @@ class NetworkService: NSObject {
         let urlString = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            
             if let err = err {
                 completion(nil, err)
                 print("Failed to get schools:", err)
@@ -58,6 +59,7 @@ class NetworkService: NSObject {
             //TODO: Convert to dictionary for faster search on index. Will use a combined score label in each SchoolCell.
             do {
                 let scores = try JSONDecoder().decode([SATScore].self, from: data)
+                print("scores: ", scores)
                 DispatchQueue.main.async {
                     completion(scores, nil)
                 }
