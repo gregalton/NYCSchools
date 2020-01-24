@@ -89,11 +89,10 @@
 			children = (
 				98391AE423D7C83C00906743 /* AppDelegate.swift */,
 				98391AE623D7C83C00906743 /* SceneDelegate.swift */,
-				98391B0A23D7E11C00906743 /* SchoolViewModel.swift */,
-				98391AE823D7C83C00906743 /* ViewController.swift */,
-				98391B0823D7DF6400906743 /* School.swift */,
-				98391B0C23D7E76300906743 /* SATScore.swift */,
-				98391B0623D7D36700906743 /* NetworkService.swift */,
+				98E562F823DA845400AFA541 /* ViewModels */,
+				98E562F923DA846D00AFA541 /* ViewControllers */,
+				98E562FA23DA848800AFA541 /* Models */,
+				98E562FB23DA849700AFA541 /* Service */,
 				98391AEA23D7C83C00906743 /* Main.storyboard */,
 				98391AED23D7C84100906743 /* Assets.xcassets */,
 				98391AEF23D7C84100906743 /* LaunchScreen.storyboard */,
@@ -109,6 +108,39 @@
 				98391AFD23D7C84100906743 /* Info.plist */,
 			);
 			path = NYCSchoolsTests;
+			sourceTree = "<group>";
+		};
+		98E562F823DA845400AFA541 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				98391B0A23D7E11C00906743 /* SchoolViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		98E562F923DA846D00AFA541 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				98391AE823D7C83C00906743 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		98E562FA23DA848800AFA541 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98391B0823D7DF6400906743 /* School.swift */,
+				98391B0C23D7E76300906743 /* SATScore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		98E562FB23DA849700AFA541 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				98391B0623D7D36700906743 /* NetworkService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
     
     var schoolViewModels = [SchoolViewModel]()
-    var scores = [SATScore]()
     var satScoreDictionary = [String:SATScore]()
     let cellID = "cellID"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         getData()
     }
     
@@ -55,8 +57,35 @@ class ViewController: UIViewController {
         
         dispatchGroup.notify(queue: DispatchQueue.global()) {
             print("Both queries have completed")
-            //reload table
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return schoolViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var totalSATScore = 0
+        let dbn = schoolViewModels[indexPath.row].id
+        let schoolName = schoolViewModels[indexPath.row].name
+        if let scores = satScoreDictionary[dbn],
+            let reading = Int(scores.sat_critical_reading_avg_score),
+        let writing = Int(scores.sat_writing_avg_score),
+        let arithmatic = Int(scores.sat_math_avg_score) {
+            totalSATScore = reading + writing + arithmatic
+        } else {
+            totalSATScore = 0
+        }
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
+        cell.accessoryType = .detailDisclosureButton
+        cell.textLabel?.text = schoolName
+        if(totalSATScore > 0) {
+            cell.detailTextLabel?.text = "Avg SAT Score: \(totalSATScore)"
+        }
+        return cell
     }
 
 
