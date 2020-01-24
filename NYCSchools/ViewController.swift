@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var schoolViewModels = [SchoolViewModel]()
     var scores = [SATScore]()
+    var satScoreDictionary = [String:SATScore]()
     let cellID = "cellID"
 
     override func viewDidLoad() {
@@ -38,16 +39,17 @@ class ViewController: UIViewController {
         }
         
         dispatchGroup.enter()
-        NetworkService.shared.getSATScores { [weak self] (scores, err) in
+        NetworkService.shared.getSATScores { [weak self] (satScoreDictionary, err) in
             
             if let err = err {
                 print("failed to get scores", err)
                 return
             }
             
-            self?.scores = scores ?? []
+            //self?.scores = scores ?? []
+            self?.satScoreDictionary = satScoreDictionary ?? [:]
             dispatchGroup.leave()
-            print("scores: ", self?.scores ?? [])
+            print("satScoreDictionary: ", self?.satScoreDictionary ?? [:])
             print("finished 2")
         }
         

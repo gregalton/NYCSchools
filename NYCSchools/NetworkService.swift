@@ -41,7 +41,7 @@ class NetworkService: NSObject {
     
     //https://data.cityofnewyork.us/resource/f9bf-2cp4.json
     
-    func getSATScores(completion: @escaping ([SATScore]?, Error?) -> ()) {
+    func getSATScores(completion: @escaping ([String:SATScore]?, Error?) -> ()) {
         
         let urlString = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
         guard let url = URL(string: urlString) else { return }
@@ -59,9 +59,15 @@ class NetworkService: NSObject {
             //TODO: Convert to dictionary for faster search on index. Will use a combined score label in each SchoolCell.
             do {
                 let scores = try JSONDecoder().decode([SATScore].self, from: data)
-                print("scores: ", scores)
+
+                var satScoreDictionary =  [String:SATScore]()
+
+                for score in scores {
+                    satScoreDictionary[score.dbn] = score
+                }
+                
                 DispatchQueue.main.async {
-                    completion(scores, nil)
+                    completion(satScoreDictionary, nil)
                 }
             } catch let jsonErr {
                 print("Failed to decode:", jsonErr)
