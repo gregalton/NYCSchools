@@ -18,6 +18,7 @@
 		98391B0923D7DF6400906743 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98391B0823D7DF6400906743 /* School.swift */; };
 		98391B0B23D7E11C00906743 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98391B0A23D7E11C00906743 /* SchoolViewModel.swift */; };
 		98391B0D23D7E76300906743 /* SATScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98391B0C23D7E76300906743 /* SATScore.swift */; };
+		98E562FD23DB31EF00AFA541 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E562FC23DB31EF00AFA541 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		98391B0823D7DF6400906743 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		98391B0A23D7E11C00906743 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		98391B0C23D7E76300906743 /* SATScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScore.swift; sourceTree = "<group>"; };
+		98E562FC23DB31EF00AFA541 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				98391AE823D7C83C00906743 /* ViewController.swift */,
+				98E562FC23DB31EF00AFA541 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				98391B0723D7D36700906743 /* NetworkService.swift in Sources */,
 				98391B0923D7DF6400906743 /* School.swift in Sources */,
 				98391AE723D7C83C00906743 /* SceneDelegate.swift in Sources */,
+				98E562FD23DB31EF00AFA541 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,9 +42,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="KdQ-rk-GMD" kind="show" id="u2D-17-E8o"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -65,16 +62,17 @@
                     <navigationItem key="navigationItem" title="NYC Schools" id="oHt-gE-JxW"/>
                     <connections>
                         <outlet property="tableView" destination="5O6-lB-Un8" id="lNf-E2-2Cv"/>
+                        <segue destination="KdQ-rk-GMD" kind="show" identifier="toDetail" id="vGF-e0-Xa5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="63.616071428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="853-2I-tE4">
             <objects>
-                <viewController id="KdQ-rk-GMD" sceneMemberID="viewController">
+                <viewController id="KdQ-rk-GMD" customClass="DetailViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0S6-iE-KSy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

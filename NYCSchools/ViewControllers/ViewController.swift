@@ -80,14 +80,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             totalSATScore = 0
         }
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
-        cell.accessoryType = .detailDisclosureButton
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = schoolName
         if(totalSATScore > 0) {
             cell.detailTextLabel?.text = "Avg SAT Score: \(totalSATScore)"
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDetail",
+            let destinationVC = segue.destination as? DetailViewController,
+            let index = tableView.indexPathForSelectedRow?.row
 
+        {
 
+            let school = self.schoolViewModels[index]
+            destinationVC.school = school
+            destinationVC.scores = self.satScoreDictionary[school.id]
+            tableView.deselectRow(at: (tableView?.indexPathForSelectedRow)!, animated: true)
+        }
+    }
 }
 
