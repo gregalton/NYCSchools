@@ -19,7 +19,6 @@ class NetworkService: NSObject {
             
             if let err = err {
                 completion(nil, err)
-                print("Failed to get schools:", err)
                 return
             }
             

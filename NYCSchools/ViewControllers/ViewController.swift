@@ -35,9 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
 
             self?.schoolViewModels = schools?.map({return SchoolViewModel(school: $0)}) ?? []
-            print("schoolViewModels: ", self?.schoolViewModels ?? [])
             dispatchGroup.leave()
-            print("finished 1")
         }
         
         dispatchGroup.enter()
@@ -48,15 +46,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             
-            //self?.scores = scores ?? []
             self?.satScoreDictionary = satScoreDictionary ?? [:]
             dispatchGroup.leave()
-            print("satScoreDictionary: ", self?.satScoreDictionary ?? [:])
-            print("finished 2")
         }
         
         dispatchGroup.notify(queue: DispatchQueue.global()) {
-            print("Both queries have completed")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
