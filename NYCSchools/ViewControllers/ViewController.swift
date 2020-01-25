@@ -101,8 +101,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
 
             let school = self.schoolViewModels[index]
-            destinationVC.school = school
             destinationVC.scores = self.satScoreDictionary[school.id]
+            destinationVC.school = school
             tableView.deselectRow(at: (tableView?.indexPathForSelectedRow)!, animated: true)
         }
     }
