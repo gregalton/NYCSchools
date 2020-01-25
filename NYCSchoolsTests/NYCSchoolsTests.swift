@@ -30,5 +30,13 @@ class NYCSchoolsTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testSchoolViewModel() {
+        let school = School(dbn: "123", school_name: "Academy of Science", boro: "M", overview_paragraph: "This is a test.")
+        let schoolViewModel = SchoolViewModel(school: school)
+        XCTAssertEqual(schoolViewModel.id, "123")
+        XCTAssertEqual(schoolViewModel.name, "Academy of Science")
+        XCTAssertEqual(schoolViewModel.detailTextString, "This is a test.")
+    }
 
 }
