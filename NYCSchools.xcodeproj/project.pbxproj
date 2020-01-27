@@ -18,11 +18,19 @@
 		98391B0923D7DF6400906743 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98391B0823D7DF6400906743 /* School.swift */; };
 		98391B0B23D7E11C00906743 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98391B0A23D7E11C00906743 /* SchoolViewModel.swift */; };
 		98391B0D23D7E76300906743 /* SATScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98391B0C23D7E76300906743 /* SATScore.swift */; };
+		98590FB023DE787300314DFB /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98590FAF23DE787300314DFB /* NetworkServiceTests.swift */; };
 		98E562FD23DB31EF00AFA541 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E562FC23DB31EF00AFA541 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		98391AF823D7C84100906743 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98391AD923D7C83C00906743 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98391AE023D7C83C00906743;
+			remoteInfo = NYCSchools;
+		};
+		98590FB223DE787300314DFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98391AD923D7C83C00906743 /* Project object */;
 			proxyType = 1;
@@ -47,6 +55,9 @@
 		98391B0823D7DF6400906743 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		98391B0A23D7E11C00906743 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		98391B0C23D7E76300906743 /* SATScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScore.swift; sourceTree = "<group>"; };
+		98590FAD23DE787200314DFB /* NetworkServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98590FAF23DE787300314DFB /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		98590FB123DE787300314DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98E562FC23DB31EF00AFA541 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +76,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98590FAA23DE787200314DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +91,7 @@
 			children = (
 				98391AE323D7C83C00906743 /* NYCSchools */,
 				98391AFA23D7C84100906743 /* NYCSchoolsTests */,
+				98590FAE23DE787300314DFB /* NetworkServiceTests */,
 				98391AE223D7C83C00906743 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +101,7 @@
 			children = (
 				98391AE123D7C83C00906743 /* NYCSchools.app */,
 				98391AF723D7C84100906743 /* NYCSchoolsTests.xctest */,
+				98590FAD23DE787200314DFB /* NetworkServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +130,15 @@
 				98391AFD23D7C84100906743 /* Info.plist */,
 			);
 			path = NYCSchoolsTests;
+			sourceTree = "<group>";
+		};
+		98590FAE23DE787300314DFB /* NetworkServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				98590FAF23DE787300314DFB /* NetworkServiceTests.swift */,
+				98590FB123DE787300314DFB /* Info.plist */,
+			);
+			path = NetworkServiceTests;
 			sourceTree = "<group>";
 		};
 		98E562F823DA845400AFA541 /* ViewModels */ = {
@@ -184,6 +213,24 @@
 			productReference = 98391AF723D7C84100906743 /* NYCSchoolsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		98590FAC23DE787200314DFB /* NetworkServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98590FB423DE787300314DFB /* Build configuration list for PBXNativeTarget "NetworkServiceTests" */;
+			buildPhases = (
+				98590FA923DE787200314DFB /* Sources */,
+				98590FAA23DE787200314DFB /* Frameworks */,
+				98590FAB23DE787200314DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98590FB323DE787300314DFB /* PBXTargetDependency */,
+			);
+			name = NetworkServiceTests;
+			productName = NetworkServiceTests;
+			productReference = 98590FAD23DE787200314DFB /* NetworkServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,6 +245,10 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					98391AF623D7C84100906743 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 98391AE023D7C83C00906743;
+					};
+					98590FAC23DE787200314DFB = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 98391AE023D7C83C00906743;
 					};
@@ -218,6 +269,7 @@
 			targets = (
 				98391AE023D7C83C00906743 /* NYCSchools */,
 				98391AF623D7C84100906743 /* NYCSchoolsTests */,
+				98590FAC23DE787200314DFB /* NetworkServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,6 +286,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		98391AF523D7C84100906743 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98590FAB23DE787200314DFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +325,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98590FA923DE787200314DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98590FB023DE787300314DFB /* NetworkServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -273,6 +340,11 @@
 			isa = PBXTargetDependency;
 			target = 98391AE023D7C83C00906743 /* NYCSchools */;
 			targetProxy = 98391AF823D7C84100906743 /* PBXContainerItemProxy */;
+		};
+		98590FB323DE787300314DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98391AE023D7C83C00906743 /* NYCSchools */;
+			targetProxy = 98590FB223DE787300314DFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -490,6 +562,46 @@
 			};
 			name = Release;
 		};
+		98590FB523DE787300314DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3DRYSXRY2F;
+				INFOPLIST_FILE = NetworkServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marketingmeody.NetworkServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYCSchools.app/NYCSchools";
+			};
+			name = Debug;
+		};
+		98590FB623DE787300314DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3DRYSXRY2F;
+				INFOPLIST_FILE = NetworkServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marketingmeody.NetworkServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYCSchools.app/NYCSchools";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -516,6 +628,15 @@
 			buildConfigurations = (
 				98391B0423D7C84100906743 /* Debug */,
 				98391B0523D7C84100906743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98590FB423DE787300314DFB /* Build configuration list for PBXNativeTarget "NetworkServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98590FB523DE787300314DFB /* Debug */,
+				98590FB623DE787300314DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
